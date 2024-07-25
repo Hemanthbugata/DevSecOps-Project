@@ -20,7 +20,7 @@
 - Clone your application's code repository onto the VM instance:
     
     ```bash
-    git clone https://github.com/hemanthbugata/DevSecOps-Project.git
+    git clone https://github.com/Hemanthbugata/DevSecOps-Project.git
     ```
     
 
@@ -187,7 +187,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/hemanthbugata/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Hemanthbugata/DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -277,7 +277,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/hemanthbugata/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/Hemanthbugata/DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
