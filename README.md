@@ -14,6 +14,9 @@
   <p align="center">Home Page</p>
 </div>
 
+![image](https://github.com/user-attachments/assets/b7b4bb70-c25a-4140-90ed-d90444bdfbdd)
+
+
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
