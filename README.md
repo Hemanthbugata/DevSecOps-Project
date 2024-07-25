@@ -14,36 +14,29 @@
   <p align="center">Home Page</p>
 </div>
 
-# **Youtube Video for step by step Demonstration!**
-[![Video Tutorial](https://img.youtube.com/vi/g8X5AoqCJHc/0.jpg)](https://youtu.be/g8X5AoqCJHc)
-
-
-## Susbcribe:
-[https://www.youtube.com/@cloudchamp?
-](https://www.youtube.com/@cloudchamp?sub_confirmation=1)
 
 # Deploy Netflix Clone on Cloud using Jenkins - DevSecOps Project!
 
 ### **Phase 1: Initial Setup and Deployment**
 
-**Step 1: Launch EC2 (Ubuntu 22.04):**
+**Step 1: Launch VM-Instance (Ubuntu 22.04):**
 
-- Provision an EC2 instance on AWS with Ubuntu 22.04.
+- Provision an VM instance on GCP with Ubuntu 22.04.
 - Connect to the instance using SSH.
 
 **Step 2: Clone the Code:**
 
 - Update all the packages and then clone the code.
-- Clone your application's code repository onto the EC2 instance:
+- Clone your application's code repository onto the VM instance:
     
     ```bash
-    git clone https://github.com/N4si/DevSecOps-Project.git
+    git clone https://github.com/hemanthbugata/DevSecOps-Project.git
     ```
     
 
 **Step 3: Install Docker and Run the App Using a Container:**
 
-- Set up Docker on the EC2 instance:
+- Set up Docker on the VM instance:
     
     ```bash
     
@@ -85,7 +78,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 **Phase 2: Security**
 
 1. **Install SonarQube and Trivy:**
-    - Install SonarQube and Trivy on the EC2 instance to scan for vulnerabilities.
+    - Install SonarQube and Trivy on the VM instance to scan for vulnerabilities.
         
         sonarqube
         ```
@@ -119,7 +112,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
 **Phase 3: CI/CD Setup**
 
 1. **Install Jenkins for Automation:**
-    - Install Jenkins on the EC2 instance to automate deployment:
+    - Install Jenkins on the VM instance to automate deployment:
     Install Java
     
     ```bash
@@ -142,7 +135,7 @@ docker build --build-arg TMDB_V3_API_KEY=<your-api-key> -t netflix .
     sudo systemctl enable jenkins
     ```
     
-    - Access Jenkins in a web browser using the public IP of your EC2 instance.
+    - Access Jenkins in a web browser using the public IP of your VM instance.
         
         publicIp:8080
         
@@ -204,7 +197,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/hemanthbugata/DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -294,7 +287,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+                git branch: 'main', url: 'https://github.com/hemanthbugata/DevSecOps-Project.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -333,20 +326,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build --build-arg TMDB_V3_API_KEY=<yourapikey> -t netflix ."
-                       sh "docker tag netflix nasi101/netflix:latest "
-                       sh "docker push nasi101/netflix:latest "
+                       sh "docker tag netflix hemanth0102/netflix:latest "
+                       sh "docker push hemanth0102/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image nasi101/netflix:latest > trivyimage.txt" 
+                sh "trivy image hemanth0102/netflix:latest > trivyimage.txt" 
             }
         }
         stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 nasi101/netflix:latest'
+                sh 'docker run -d --name netflix -p 8081:80 hemanth0102/netflix:latest'
             }
         }
     }
@@ -563,7 +556,7 @@ sudo systemctl restart jenkins
 
 ####Grafana
 
-**Install Grafana on Ubuntu 22.04 and Set it up to Work with Prometheus**
+**Install Grafana on New VM Instance Ubuntu 22.04 and Set it up to Work with Prometheus**
 
 **Step 1: Install Dependencies:**
 
@@ -684,7 +677,7 @@ That's it! You've successfully installed and set up Grafana to work with Prometh
 
 # Phase 6: Kubernetes
 
-## Create Kubernetes Cluster with Nodegroups
+## Create Kubernetes Cluster with Nodegroups (GKE)
 
 In this phase, you'll set up a Kubernetes cluster with node groups. This will provide a scalable environment to deploy and manage your applications.
 
@@ -736,7 +729,7 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 
 1. **Install ArgoCD:**
 
-   You can install ArgoCD on your Kubernetes cluster by following the instructions provided in the [EKS Workshop](https://archive.eksworkshop.com/intermediate/290_argocd/install/) documentation.
+ You can install ArgoCD on your Kubernetes cluster by following the instructions provided in the [(https://cloud.google.com/blog/products/containers-kubernetes/building-a-fleet-with-argocd-and-gke)] documentation.
 
 2. **Set Your GitHub Repository as a Source:**
 
@@ -752,7 +745,4 @@ To deploy an application with ArgoCD, you can follow these steps, which I'll out
 4. **Access your Application**
    - To Access the app make sure port 30007 is open in your security group and then open a new tab paste your NodeIP:30007, your app should be running.
 
-**Phase 7: Cleanup**
 
-1. **Cleanup AWS EC2 Instances:**
-    - Terminate AWS EC2 instances that are no longer needed.# DevSecOps-Project
