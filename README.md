@@ -9,10 +9,6 @@
 
 <br />
 
-<div align="center">
-  <img src="./public/assets/home-page.png" alt="Logo" width="100%" height="100%">
-  <p align="center">Home Page</p>
-</div>
 
 ![image](https://github.com/user-attachments/assets/b7b4bb70-c25a-4140-90ed-d90444bdfbdd)
 
