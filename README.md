@@ -1,13 +1,4 @@
-<div align="center">
-  <img src="./public/assets/DevSecOps.png" alt="Logo" width="100%" height="100%">
-
-  <br>
-  <a href="http://netflix-clone-with-tmdb-using-react-mui.vercel.app/">
-    <img src="./public/assets/netflix-logo.png" alt="Logo" width="100" height="32">
-  </a>
-</div>
-
-<br />
+![_Minimalist Elegant Flowchart Brainstorm Project Mind Map](https://github.com/user-attachments/assets/6e2e3085-0f6a-410a-a121-d55eb2de10b7)
 
 
 ![image](https://github.com/user-attachments/assets/b7b4bb70-c25a-4140-90ed-d90444bdfbdd)
