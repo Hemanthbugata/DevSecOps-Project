@@ -1,6 +1,7 @@
 DevSecOps Project - Architecture :
 
-![Uploading _Minimalist Elegant Flowchart Brainstorm Project Mind Map (1).png…]()
+![_Minimalist Elegant Flowchart Brainstorm Project Mind Map (1)](https://github.com/user-attachments/assets/58231525-fa37-42df-8e6b-dba6ed207f84)
+
 
 
 ![image](https://github.com/user-attachments/assets/b7b4bb70-c25a-4140-90ed-d90444bdfbdd)
